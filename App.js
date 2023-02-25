@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import EntryList from './component/EntryList';
+import AllEntry from './screen/AllEntry';
+import OverEntry from './screen/OverEntry';
 
 export default function App() {
 
@@ -14,12 +16,12 @@ export default function App() {
       <Tab.Navigator>
         <Tab.Screen 
           name="All" 
-          component={EntryList} 
+          component={AllEntry} 
           initialParams={{ 
             titleText: 'TEST aLL'
           }}
         />
-        <Tab.Screen name="Over" component={EntryList} initialParams={{ 
+        <Tab.Screen name="Over" component={OverEntry} initialParams={{ 
             titleText: 'TEST Over'
           }}/>
       </Tab.Navigator>
