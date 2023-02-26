@@ -50,21 +50,26 @@ const myStyling = StyleSheet.create({
     },
     generalButton: {
         backgroundColor: "yellow",
-        color: 'black',
+        color: 'white',
         height: 50,
-        alignContent: 'flex-start',
-        justifyContent: 'center',
-        margin: 20
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        margin: 20,
+        flexDirection: 'row',
+        paddingHorizontal: 20
     },
     pressedButton: {
-        backgroundColor: 'black',
-        color: 'white'
+        
     },
     tagText: {
-        position: 'relative',
+        paddingRight: 2
     },
     tagButn: {
         fontWeight: 'bold',
+        backgroundColor: 'white',
+        width: 60,
+        textAlign: 'center',
+        paddingVertical: 7
     },
     image: {
         justifyContent: 'center',

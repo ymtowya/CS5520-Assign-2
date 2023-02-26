@@ -7,10 +7,11 @@ export default function ButtonPressable({
     onPressed,
     selfStyle
     }) {
-        
+
     return (
         <Pressable
             onPress={onPressed}
+            android_ripple={{ color: 'grey', radius: 20 }}
             style={({ pressed }) => {
                 return [
                   myStyling.generalButton,
