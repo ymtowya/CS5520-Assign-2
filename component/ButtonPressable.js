@@ -7,7 +7,7 @@ export default function ButtonPressable({
     onPressed,
     selfStyle
     }) {
-
+        
     return (
         <Pressable
             onPress={onPressed}

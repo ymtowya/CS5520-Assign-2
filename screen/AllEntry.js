@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { View, Text } from "react-native";
+import EntryList from "../component/EntryList";
 
 export default function AllEntry({ route, navigation }) {
 
@@ -11,9 +12,8 @@ export default function AllEntry({ route, navigation }) {
 
     return (
         <View>
-            <Text>
-                {route.params.titleText}
-            </Text>
+            <EntryList>
+            </EntryList>
         </View>
     );
 }

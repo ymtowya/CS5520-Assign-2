@@ -49,24 +49,21 @@ const myStyling = StyleSheet.create({
         justifyContent: 'space-between',
     },
     generalButton: {
-        backgroundColor: "beige",
-        color: 'white'
+        backgroundColor: "yellow",
+        color: 'black',
+        height: 50,
+        alignContent: 'flex-start',
+        justifyContent: 'center',
+        margin: 20
     },
     pressedButton: {
-        
+        backgroundColor: 'black',
+        color: 'white'
     },
-    textLabelView: {
-        borderWidth: 2,
-        borderColor: 'blue',
-        marginBottom: 30,
-        padding: 15,
-        alignItems: 'center',
+    tagText: {
         position: 'relative',
-        left: '20%',
-        width: '60%'
     },
-    textLabel: {
-        color: '#FFFFFF',
+    tagButn: {
         fontWeight: 'bold',
     },
     image: {

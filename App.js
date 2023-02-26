@@ -6,26 +6,46 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import EntryList from './component/EntryList';
 import AllEntry from './screen/AllEntry';
 import OverEntry from './screen/OverEntry';
+import AddEntry from './screen/AddEntry';
+import EditEntry from './screen/EditEntry';
 
 export default function App() {
 
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
 
+  const TabNavi = () => (
+    <Tab.Navigator>
+      <Tab.Screen 
+        name="All" 
+        component={AllEntry} 
+        initialParams={{ 
+          titleText: 'TEST aLL'
+        }}
+      />
+      <Tab.Screen name="Over" component={OverEntry} initialParams={{ 
+          titleText: 'TEST Over'
+        }}/>
+    </Tab.Navigator>
+  );
+
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen 
-          name="All" 
-          component={AllEntry} 
-          initialParams={{ 
-            titleText: 'TEST aLL'
-          }}
+      <Stack.Navigator>
+        <Stack.Screen
+          name="Home"
+          component={TabNavi}
+          options={{headerShown: false}}
         />
-        <Tab.Screen name="Over" component={OverEntry} initialParams={{ 
-            titleText: 'TEST Over'
-          }}/>
-      </Tab.Navigator>
+        <Stack.Screen
+          name="Add"
+          component={AddEntry}
+        />
+        <Stack.Screen
+          name="Edit"
+          component={EditEntry}
+        />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
