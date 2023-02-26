@@ -1,17 +1,21 @@
 import { useEffect } from "react";
 import { View, Text, FlatList } from "react-native";
+import ButtonPressable from "./ButtonPressable";
 
-export default function EntryList({ route, navigation }) {
+export default function EntryItem({ route, navigation, meal }) {
 
-    const entryItem = (
-
-    );
+    const { mealName, calory } = meal;
 
     return (
         <View>
-            <FlatList>
-
-            </FlatList>
+            <Text>
+                {mealName}
+            </Text>
+            <ButtonPressable>
+                <Text>
+                    {calory}
+                </Text>
+            </ButtonPressable>
         </View>
     );
 }

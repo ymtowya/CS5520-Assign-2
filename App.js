@@ -10,6 +10,7 @@ import OverEntry from './screen/OverEntry';
 export default function App() {
 
   const Tab = createBottomTabNavigator();
+  const Stack = createStackNavigator();
 
   return (
     <NavigationContainer>
