@@ -20,8 +20,6 @@ export default function AddEntry({ route, navigation }) {
         setName('');
     };
 
-    console.log(route.params.limitr);
-
     const sfunc = function submit() {
         if (!isValidNumber(calory) || name == '') {
             Alert.alert('Input invalid',
@@ -31,7 +29,7 @@ export default function AddEntry({ route, navigation }) {
         const newMeal = {
             name: name,
             calory: parseInt(calory),
-            reviewed: parseInt(calory) > route.params.limit ? true : false,
+            reviewed: parseInt(calory) > route.params.limit ? false : true,
         };
         writeToDB({ meal: newMeal });
         rfunc();

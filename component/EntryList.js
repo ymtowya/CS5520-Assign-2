@@ -4,7 +4,7 @@ import { collection, query, where, onSnapshot, deleteDoc } from "firebase/firest
 import { firestore } from '../dataSource/firebase-setup';
 import EntryItem from "./EntryItem";
 
-export default function EntryList({ route, navigation }) {
+export default function EntryList({ route, navigation, showReviewedOnly }) {
 
     const [meals, setMeals] = useState([]);
 
@@ -17,6 +17,9 @@ export default function EntryList({ route, navigation }) {
             querySnapShot.docs.forEach((snapDoc) => {
               mealsfromdb.push({...snapDoc.data(), id: snapDoc.id});
             });
+            if (showReviewedOnly) {
+                mealsfromdb = mealsfromdb.filter((v) => {return v.reviewed;});
+            }
             setMeals(mealsfromdb);
           }
           // console.log(JSON.stringify(querySnapShot.docs[0]));
@@ -26,20 +29,7 @@ export default function EntryList({ route, navigation }) {
           // detach listener
           unsubscribe();
         }
-    }, []); // dependency arr  
-
-    // meals = [
-    //     {
-    //         mealName: 'br',
-    //         calory: 100,
-    //         id: 1
-    //     },
-    //     {
-    //         mealName: 'op',
-    //         calory: 70,
-    //         id: 2
-    //     }
-    // ];
+    }, []); // dependency arr
 
     return (
         <View>
@@ -49,6 +39,8 @@ export default function EntryList({ route, navigation }) {
                     return (
                         <EntryItem
                             meal={meal.item}
+                            navigation={navigation}
+                            route={route}
                         >
                         </EntryItem>
                     );

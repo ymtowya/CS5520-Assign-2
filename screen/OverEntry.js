@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { View, Text } from "react-native";
+import EntryList from "../component/EntryList";
 
 export default function OverEntry({ route, navigation }) {
 
@@ -11,9 +12,12 @@ export default function OverEntry({ route, navigation }) {
 
     return (
         <View>
-            <Text>
-                {route.params.titleText}
-            </Text>
+            <EntryList
+                showReviewedOnly={true}
+                navigation={navigation}
+                route={route}
+            >
+            </EntryList>
         </View>
     );
 }

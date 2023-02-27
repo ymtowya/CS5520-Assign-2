@@ -12,7 +12,11 @@ export default function AllEntry({ route, navigation }) {
 
     return (
         <View>
-            <EntryList>
+            <EntryList
+                showReviewedOnly={false}
+                navigation={navigation}
+                route={route}
+            >
             </EntryList>
         </View>
     );
