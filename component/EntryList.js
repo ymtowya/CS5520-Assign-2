@@ -4,7 +4,7 @@ import { collection, query, where, onSnapshot, deleteDoc } from "firebase/firest
 import { firestore } from '../dataSource/firebase-setup';
 import EntryItem from "./EntryItem";
 
-export default function EntryList({ route, navigation, showReviewedOnly }) {
+export default function EntryList({ route, navigation, showWarnOnly }) {
 
     const [meals, setMeals] = useState([]);
 
@@ -17,8 +17,8 @@ export default function EntryList({ route, navigation, showReviewedOnly }) {
             querySnapShot.docs.forEach((snapDoc) => {
               mealsfromdb.push({...snapDoc.data(), id: snapDoc.id});
             });
-            if (showReviewedOnly) {
-                mealsfromdb = mealsfromdb.filter((v) => {return v.reviewed;});
+            if (showWarnOnly) {
+                mealsfromdb = mealsfromdb.filter((v) => {return !v.reviewed;});
             }
             setMeals(mealsfromdb);
           }

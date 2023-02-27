@@ -13,7 +13,7 @@ export default function AllEntry({ route, navigation }) {
     return (
         <View>
             <EntryList
-                showReviewedOnly={false}
+                showWarnOnly={false}
                 navigation={navigation}
                 route={route}
             >

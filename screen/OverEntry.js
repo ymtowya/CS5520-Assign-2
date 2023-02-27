@@ -13,7 +13,7 @@ export default function OverEntry({ route, navigation }) {
     return (
         <View>
             <EntryList
-                showReviewedOnly={true}
+                showWarnOnly={true}
                 navigation={navigation}
                 route={route}
             >
