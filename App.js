@@ -8,19 +8,36 @@ import AllEntry from './screen/AllEntry';
 import OverEntry from './screen/OverEntry';
 import AddEntry from './screen/AddEntry';
 import EditEntry from './screen/EditEntry';
+import ButtonPressable from './component/ButtonPressable';
+import { useState } from 'react';
 
 export default function App() {
 
   const Tab = createBottomTabNavigator();
   const Stack = createStackNavigator();
+  const [limit, setLimit] = useState(500);
 
-  const TabNavi = () => (
+  const TabNavi = ( {navigation} ) => (
     <Tab.Navigator>
       <Tab.Screen 
         name="All" 
         component={AllEntry} 
         initialParams={{ 
           titleText: 'TEST aLL'
+        }}
+        options={({ route }) => {
+          return {
+            headerRight: () => {
+              return (
+                <ButtonPressable
+                  onPressed={() => {navigation.navigate('Add', { limit: limit });}}
+                  selfStyle={{backgroundColor: 'red'}}
+                >
+                  <Text>X</Text>
+                </ButtonPressable>
+              );
+            }
+          };
         }}
       />
       <Tab.Screen name="Over" component={OverEntry} initialParams={{ 
@@ -35,7 +52,11 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={TabNavi}
-          options={{headerShown: false}}
+          options={({ route }) => {
+            return {
+              headerShown: false
+            };
+          }}
         />
         <Stack.Screen
           name="Add"

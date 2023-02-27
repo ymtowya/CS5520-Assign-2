@@ -1,14 +1,15 @@
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { firestore } from "./firebase-setup";
 
 const collectId = 'meals';
 
-export async function writeToDB( { data } ) {
+export async function writeToDB( { meal } ) {
     try {
-        const docRef = await addDoc(collection(firestore, collectId), data);
-        console.log("Document writted id: ", docRef.id);
+        console.log(meal);
+        const docRef = await addDoc(collection(firestore, collectId), meal);
+        // console.log("Document writted id: ", docRef.id);
     } catch (err) {
-       console.err(err); 
+       console.err("ERROR:" , err); 
     }
 }
 
