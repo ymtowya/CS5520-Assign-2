@@ -5,9 +5,8 @@ const collectId = 'meals';
 
 export async function writeToDB( { meal } ) {
     try {
-        console.log(meal);
         const docRef = await addDoc(collection(firestore, collectId), meal);
-        // console.log("Document writted id: ", docRef.id);
+        console.log("Document writted id: ", docRef.id);
     } catch (err) {
        console.err("ERROR:" , err); 
     }

@@ -5,9 +5,7 @@ import ButtonPressable from "./ButtonPressable";
 
 export default function EntryItem({ route, navigation, meal }) {
 
-    const { mealName, calory } = meal;
-
-
+    const { mealName, calory, id } = meal;
 
     return (
         <View>

@@ -6,7 +6,7 @@ import { writeToDB } from "../dataSource/FireStoreHelper";
 import myStyling from "../resource/MyStyles";
 
 function isValidNumber(p) {
-    return !isNaN(p);
+    return !isNaN(p) && parseInt(p) >= 0;
 }
 
 export default function AddEntry({ route, navigation }) {
@@ -25,17 +25,17 @@ export default function AddEntry({ route, navigation }) {
     const sfunc = function submit() {
         if (!isValidNumber(calory) || name == '') {
             Alert.alert('Input invalid',
-                'Input calory is invalid form.');
+                'Input is invalid form.');
             return;
         }
         const newMeal = {
             name: name,
             calory: parseInt(calory),
             reviewed: parseInt(calory) > route.params.limit ? true : false,
-            key: Math.random()
         };
         writeToDB({ meal: newMeal });
-        // navigation.navigate('Home');
+        rfunc();
+        navigation.navigate('Home');
     };
 
     return (
