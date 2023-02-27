@@ -23,7 +23,7 @@ export default function App() {
         name="All" 
         component={AllEntry} 
         initialParams={{ 
-          titleText: 'TEST aLL'
+          titleText: 'All Entries'
         }}
         options={({ route }) => {
           return {
@@ -41,8 +41,23 @@ export default function App() {
         }}
       />
       <Tab.Screen name="Over" component={OverEntry} initialParams={{ 
-          titleText: 'TEST Over'
-        }}/>
+          titleText: 'Over-Limit Entries'
+        }}
+        options={({ route }) => {
+          return {
+            headerRight: () => {
+              return (
+                <ButtonPressable
+                  onPressed={() => {navigation.navigate('Add', { limit: limit });}}
+                  selfStyle={{backgroundColor: 'red'}}
+                >
+                  <Text>X</Text>
+                </ButtonPressable>
+              );
+            }
+          };
+        }}
+        />
     </Tab.Navigator>
   );
 
