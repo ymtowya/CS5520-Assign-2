@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, Text, FlatList } from "react-native";
+import { collection, query, where, onSnapshot, deleteDoc } from "firebase/firestore";
+import { firestore } from '../dataSource/firebase-setup';
 import EntryItem from "./EntryItem";
 
 export default function EntryList({ route, navigation }) {

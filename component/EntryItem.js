@@ -5,13 +5,13 @@ import ButtonPressable from "./ButtonPressable";
 
 export default function EntryItem({ route, navigation, meal }) {
 
-    const { mealName, calory, id } = meal;
+    const { name, calory, id } = meal;
 
     return (
         <View>
             <ButtonPressable>
                 <Text style={myStyling.tagText}>
-                    {mealName}
+                    {name}
                 </Text>
                 <Text style={myStyling.tagButn}>
                     {calory}
