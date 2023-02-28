@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { View, Text, Alert } from "react-native";
 import ButtonPressable from "../component/ButtonPressable";
 import { deleteFromDB, updateDB } from "../dataSource/FireStoreHelper";
+import myStyling from "../resource/MyStyles";
 
 export default function EditEntry({ route, navigation }) {
 
@@ -51,39 +52,41 @@ export default function EditEntry({ route, navigation }) {
 
     return (
         <View>
-            <View>
-                <View>
-                    <Text>
-                        Calories
+            <View style={myStyling.myCardo}>
+                <View style={[myStyling.rowAlignContainer, myStyling.textAlignContainer]}>
+                    <Text style={myStyling.boldText}>
+                        Calories: 
                     </Text>
-                    <Text>
+                    <Text style={myStyling.longText}>
                         { calory }
                     </Text>
                 </View>
-                <View>
-                    <Text>
-                        Description
+                <View style={[myStyling.rowAlignContainer, myStyling.textAlignContainer]}>
+                    <Text style={myStyling.boldText}>
+                        Description: 
                     </Text>
-                    <Text>
+                    <Text style={myStyling.longText}>
                         { name }
                     </Text>
                 </View>
-                <ButtonPressable
-                    onPressed={() => {onDel(id);}}
-                >
-                    <Text>
-                        del
-                    </Text>
-                </ButtonPressable>
-                {!reviewed && (
+                <View style={myStyling.rowAlignContainer}>
                     <ButtonPressable
-                        onPressed={() => {onUd(id);}}
+                        onPressed={() => {onDel(id);}}
                     >
-                    <Text>
-                        rev
-                    </Text>
+                        <Text>
+                            del
+                        </Text>
                     </ButtonPressable>
-                )}
+                    {!reviewed && (
+                        <ButtonPressable
+                            onPressed={() => {onUd(id);}}
+                        >
+                        <Text>
+                            rev
+                        </Text>
+                        </ButtonPressable>
+                    )}
+                </View>
             </View>
         </View>
     );

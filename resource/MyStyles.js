@@ -4,18 +4,29 @@ import { StyleSheet } from "react-native";
 const myStyling = StyleSheet.create({
     myCardo: {
         justifyContent: 'center',
-        paddingVertical: 60,
+        paddingVertical: 30,
         paddingHorizontal: 30,
         backgroundColor: '#FFF8DC',
         elevation: 20,
         shadowColor: 'black',
-        shadowRadius: 40,
+        shadowRadius: 20,
         shadowOffset: {
             width: 20,
             height: 20
         },
         shadowOpacity: 10,
-        borderRadius: 10
+        borderRadius: 10,
+        margin: 10,
+        alignContent: 'center',
+        alignItems: 'center'
+    },
+    rowAlignContainer: {
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        flexDirection: 'row',
+    },
+    textAlignContainer: {
+        alignSelf: 'flex-start'
     },
     inputBox: {
         borderBottomWidth: 1,
@@ -27,7 +38,12 @@ const myStyling = StyleSheet.create({
         textAlign: 'center',
     },
     boldText: {
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginHorizontal: 5,
+        width: 90
+    },
+    longText: {
+        maxWidth: 180
     },
     warningText: {
         color: 'red'
@@ -62,7 +78,8 @@ const myStyling = StyleSheet.create({
         
     },
     tagText: {
-        paddingRight: 2
+        paddingRight: 2,
+        maxWidth: 180,
     },
     tagButn: {
         fontWeight: 'bold',
