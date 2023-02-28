@@ -2,14 +2,13 @@ import { useEffect } from "react";
 import { View, Text, FlatList } from "react-native";
 import myStyling from "../resource/MyStyles";
 import ButtonPressable from "./ButtonPressable";
+import { AntDesign } from '@expo/vector-icons';
 
 export default function EntryItem({ route, navigation, meal }) {
 
     const { name, calory, id, reviewed } = meal;
     const insertIcon = (
-        <Text>
-            X
-        </Text>
+        <AntDesign name="exclamationcircle" size={15} color="black" />
     );
 
 

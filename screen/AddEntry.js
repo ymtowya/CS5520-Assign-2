@@ -38,9 +38,9 @@ export default function AddEntry({ route, navigation }) {
 
     return (
         <View>
-            <View>
-                <Text>
-                    Calories
+            <View style={[myStyling.rowAlignContainer, myStyling.textAlignContainer]}>
+                <Text style={myStyling.boldText}>
+                    Calories:
                 </Text>
                 <TextInput
                     value={calory}
@@ -48,18 +48,21 @@ export default function AddEntry({ route, navigation }) {
                     style={ myStyling.inputBox }
                 >
                 </TextInput>
-                <Text>
-                    Description
+            </View>
+            <View style={[myStyling.rowAlignContainer, myStyling.textAlignContainer]}>
+                <Text style={myStyling.boldText}>
+                    Description:
                 </Text>
                 <TextInput
                     value={name}
                     onChangeText={ txt => setName(txt) }
-                    style={ myStyling.inputBox }
+                    style={ [myStyling.inputBox, myStyling.multiLineTBox] }
+                    multiline={true}
                 >
                 </TextInput>
             </View>
 
-            <View>
+            <View style={myStyling.rowAlignContainer}>
                 <ButtonPressable
                     onPressed={() => {rfunc();}}
                 >

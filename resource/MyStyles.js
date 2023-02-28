@@ -6,7 +6,7 @@ const myStyling = StyleSheet.create({
         justifyContent: 'center',
         paddingVertical: 30,
         paddingHorizontal: 30,
-        backgroundColor: '#FFF8DC',
+        backgroundColor: '#FAFFDA',
         elevation: 20,
         shadowColor: 'black',
         shadowRadius: 20,
@@ -21,7 +21,7 @@ const myStyling = StyleSheet.create({
         alignItems: 'center'
     },
     rowAlignContainer: {
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         alignItems: 'center',
         flexDirection: 'row',
     },
@@ -33,7 +33,8 @@ const myStyling = StyleSheet.create({
         height: 40,
         margin: 5,
         padding: 12,
-        minWidth: 160,
+        minWidth: 218,
+        maxWidth: 220,
         backgroundColor: '#FFFAFA',
         textAlign: 'center',
     },
@@ -65,7 +66,7 @@ const myStyling = StyleSheet.create({
         justifyContent: 'space-between',
     },
     generalButton: {
-        backgroundColor: "yellow",
+        backgroundColor: "#DCF6F3",
         color: 'white',
         height: 50,
         justifyContent: 'space-between',
@@ -75,7 +76,7 @@ const myStyling = StyleSheet.create({
         paddingHorizontal: 20
     },
     pressedButton: {
-        
+        backgroundColor: "FFFFCC",
     },
     tagText: {
         paddingRight: 2,
@@ -86,7 +87,8 @@ const myStyling = StyleSheet.create({
         backgroundColor: 'white',
         width: 60,
         textAlign: 'center',
-        paddingVertical: 7
+        paddingVertical: 7,
+        marginLeft: 5,
     },
     image: {
         justifyContent: 'center',
@@ -100,7 +102,11 @@ const myStyling = StyleSheet.create({
         bgColor1: '#1874CD',
         bgColor2: '#6E8B3D',
     },
-
+    multiLineTBox: {
+        height: 100,
+        textAlignVertical: 'top',
+        textAlign: 'left',
+    },
 });
 
 export default myStyling;

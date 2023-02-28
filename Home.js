@@ -6,7 +6,6 @@ export default function Home({ route, navigation, meals }) {
 
     const entryItem = (
         <EntryItem
-            
         >
         </EntryItem>
     );

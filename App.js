@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import EntryList from './component/EntryList';
@@ -10,6 +10,8 @@ import AddEntry from './screen/AddEntry';
 import EditEntry from './screen/EditEntry';
 import ButtonPressable from './component/ButtonPressable';
 import { useState } from 'react';
+import myStyling from './resource/MyStyles';
+import { AntDesign } from '@expo/vector-icons';
 
 export default function App() {
 
@@ -31,12 +33,25 @@ export default function App() {
               return (
                 <ButtonPressable
                   onPressed={() => {navigation.navigate('Add', { limit: limit });}}
-                  selfStyle={{backgroundColor: 'red'}}
                 >
-                  <Text>X</Text>
+                  <AntDesign name="pluscircleo" size={22} color="black" />
                 </ButtonPressable>
               );
-            }
+            },
+            tabBarIcon: ({ focused, color, size }) => {
+              return (
+                <AntDesign
+                name={focused ? "infocirlce" : "infocirlceo"}
+                size={18} 
+                color={focused ? "red" : "black"}
+                />
+              );
+            },
+            tabBarLabel: () => {
+              return (
+                <Text>All Entries</Text>
+              );
+            },
           };
         }}
       />
@@ -49,12 +64,24 @@ export default function App() {
               return (
                 <ButtonPressable
                   onPressed={() => {navigation.navigate('Add', { limit: limit });}}
-                  selfStyle={{backgroundColor: 'red'}}
                 >
-                  <Text>X</Text>
+                  <AntDesign name="pluscircleo" size={22} color="black" />
                 </ButtonPressable>
               );
-            }
+            },
+            tabBarIcon: ({ focused, color, size }) => {
+              return (
+                <AntDesign 
+                  name={focused ? "clockcircle" : "clockcircleo"}
+                  size={18} 
+                  color={focused ? "red" : "black"} />
+              );
+            },
+            tabBarLabel: () => {
+              return (
+                <Text>Over-Limit Entries</Text>
+              );
+            },
           };
         }}
         />
@@ -62,27 +89,29 @@ export default function App() {
   );
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Home"
-          component={TabNavi}
-          options={({ route }) => {
-            return {
-              headerShown: false
-            };
-          }}
-        />
-        <Stack.Screen
-          name="Add"
-          component={AddEntry}
-        />
-        <Stack.Screen
-          name="Edit"
-          component={EditEntry}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer
+        theme={DefaultTheme}
+      >
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Home"
+            component={TabNavi}
+            options={({ route }) => {
+              return {
+                headerShown: false
+              };
+            }}
+          />
+          <Stack.Screen
+            name="Add"
+            component={AddEntry}
+          />
+          <Stack.Screen
+            name="Edit"
+            component={EditEntry}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
 
