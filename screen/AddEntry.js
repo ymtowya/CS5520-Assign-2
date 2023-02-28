@@ -23,7 +23,7 @@ export default function AddEntry({ route, navigation }) {
     const sfunc = function submit() {
         if (!isValidNumber(calory) || name == '') {
             Alert.alert('Input invalid',
-                'Input is invalid form.');
+                'Please correct your input.');
             return;
         }
         const newMeal = {

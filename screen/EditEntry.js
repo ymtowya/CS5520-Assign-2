@@ -3,6 +3,7 @@ import { View, Text, Alert } from "react-native";
 import ButtonPressable from "../component/ButtonPressable";
 import { deleteFromDB, updateDB } from "../dataSource/FireStoreHelper";
 import myStyling from "../resource/MyStyles";
+import { AntDesign } from '@expo/vector-icons';
 
 export default function EditEntry({ route, navigation }) {
 
@@ -73,17 +74,13 @@ export default function EditEntry({ route, navigation }) {
                     <ButtonPressable
                         onPressed={() => {onDel(id);}}
                     >
-                        <Text>
-                            del
-                        </Text>
+                        <AntDesign name="delete" size={18} color="black" />
                     </ButtonPressable>
                     {!reviewed && (
                         <ButtonPressable
                             onPressed={() => {onUd(id);}}
                         >
-                        <Text>
-                            rev
-                        </Text>
+                        <AntDesign name="pushpino" size={18} color="black" />
                         </ButtonPressable>
                     )}
                 </View>
