@@ -34,7 +34,7 @@ export default function App() {
                 <ButtonPressable
                   onPressed={() => {navigation.navigate('Add', { limit: limit });}}
                 >
-                  <AntDesign name="pluscircleo" size={16} color="black" />
+                  <AntDesign name="pluscircleo" size={16} color={myStyling.black} />
                 </ButtonPressable>
               );
             },
@@ -43,7 +43,7 @@ export default function App() {
                 <AntDesign
                 name={focused ? "infocirlce" : "infocirlceo"}
                 size={18} 
-                color={focused ? "red" : "black"}
+                color={focused ? myStyling.red : myStyling.black}
                 />
               );
             },
@@ -65,7 +65,7 @@ export default function App() {
                 <ButtonPressable
                   onPressed={() => {navigation.navigate('Add', { limit: limit });}}
                 >
-                  <AntDesign name="pluscircleo" size={16} color="black" />
+                  <AntDesign name="pluscircleo" size={16} color={myStyling.black} />
                 </ButtonPressable>
               );
             },
@@ -74,7 +74,7 @@ export default function App() {
                 <AntDesign 
                   name={focused ? "clockcircle" : "clockcircleo"}
                   size={18} 
-                  color={focused ? "red" : "black"} />
+                  color={focused ? myStyling.red : myStyling.black} />
               );
             },
             tabBarLabel: () => {

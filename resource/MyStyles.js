@@ -114,6 +114,8 @@ const myStyling = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    black: 'black',
+    red: 'red',
 });
 
 export default myStyling;

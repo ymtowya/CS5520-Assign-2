@@ -74,13 +74,13 @@ export default function EditEntry({ route, navigation }) {
                     <ButtonPressable
                         onPressed={() => {onDel(id);}}
                     >
-                        <AntDesign name="delete" size={18} color="black" />
+                        <AntDesign name="delete" size={18} color={myStyling.black} />
                     </ButtonPressable>
                     {!reviewed && (
                         <ButtonPressable
                             onPressed={() => {onUd(id);}}
                         >
-                        <AntDesign name="pushpino" size={18} color="black" />
+                        <AntDesign name="pushpino" size={18} color={myStyling.black} />
                         </ButtonPressable>
                     )}
                 </View>

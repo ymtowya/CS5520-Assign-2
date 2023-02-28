@@ -8,7 +8,7 @@ export default function EntryItem({ route, navigation, meal }) {
 
     const { name, calory, id, reviewed } = meal;
     const insertIcon = (
-        <AntDesign name="exclamationcircle" size={15} color="black" />
+        <AntDesign name="exclamationcircle" size={15} color={myStyling.black} />
     );
 
 
