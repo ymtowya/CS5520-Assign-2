@@ -34,7 +34,7 @@ export default function App() {
                 <ButtonPressable
                   onPressed={() => {navigation.navigate('Add', { limit: limit });}}
                 >
-                  <AntDesign name="pluscircleo" size={22} color="black" />
+                  <AntDesign name="pluscircleo" size={16} color="black" />
                 </ButtonPressable>
               );
             },
@@ -65,7 +65,7 @@ export default function App() {
                 <ButtonPressable
                   onPressed={() => {navigation.navigate('Add', { limit: limit });}}
                 >
-                  <AntDesign name="pluscircleo" size={22} color="black" />
+                  <AntDesign name="pluscircleo" size={16} color="black" />
                 </ButtonPressable>
               );
             },

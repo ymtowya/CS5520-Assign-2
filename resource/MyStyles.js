@@ -76,7 +76,9 @@ const myStyling = StyleSheet.create({
         paddingHorizontal: 20
     },
     pressedButton: {
-        backgroundColor: "FFFFCC",
+        backgroundColor: "#FFE5CC",
+        height: 65,
+        margin: 10,
     },
     tagText: {
         paddingRight: 2,
