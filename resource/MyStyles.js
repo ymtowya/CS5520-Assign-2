@@ -108,6 +108,12 @@ const myStyling = StyleSheet.create({
         textAlignVertical: 'top',
         textAlign: 'left',
     },
+    defaultContainer: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
 });
 
 export default myStyling;
